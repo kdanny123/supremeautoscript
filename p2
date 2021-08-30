@@ -1,0 +1,54 @@
+/ ==UserScript==
+// @name         step 2
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://www.supremenewyork.com/checkout
+//@include       www.supremenewyork.com/checkout
+// @grant        none
+// @run-at document-end
+
+// ==/UserScript==
+
+
+    var data = {
+    fullname: "john doe",
+    email: "adsf@asdf.com",
+    tel: "123-123-1234",
+    address1: "1234 apple Way",
+    city: "philadelphia",
+    postcode: "19135",
+    country: "USA",
+    state: "PA",
+    type: "master",
+number: '1234 1234 1234 1234',
+    expmonth: '04',
+    expyear: '2021',
+    cvv: '123'
+};
+
+$('ins')[1].click(); //toggle checkbox
+document.getElementById("order_billing_name").value = data.fullname;
+                    document.getElementById("order_email").value = data.email;
+                    document.getElementById("order_tel").value = data.tel;
+                    document.getElementById("bo").value = data.address1;
+                                       document.getElementById("order_billing_city").value = data.city;
+                    document.getElementById("order_billing_zip").value = data.postcode;
+                    document.getElementById("order_billing_country").value = data.country;
+                    document.getElementById("order_billing_state").value = data.state;
+                    document.getElementById("credit_card_month").value = data.expmonth;
+                    document.getElementById("credit_card_year").value = data.expyear;
+                    document.querySelectorAll("input[type=text]")[6].value = data.number;
+                    document.querySelectorAll("input[type=text]")[7].value = data.cvv;
+   //document.getElementById("credit_card_type").value = data.type;
+
+
+
+
+//function processPayment() {
+//$('input[value="process payment"]').click();
+//
+//}
+
+//setTimeout(processPayment,3000);
